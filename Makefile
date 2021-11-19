@@ -24,5 +24,7 @@ $(NAME): $(OBJS) $(HEADER)
 clean:
 	rm -f $(OBJS)
 fclean: clean 
-	rm $(NAME)
+	rm -f $(NAME)
 re: fclean all
+
+.PHONY: all clean fclean re

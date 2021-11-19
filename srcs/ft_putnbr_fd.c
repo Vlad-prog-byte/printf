@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cayesha <cayesha@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/19 14:56:21 by cayesha           #+#    #+#             */
+/*   Updated: 2021/11/19 14:56:28 by cayesha          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../includes/ft_printf.h"
-static void	Recur(long int n, int *sum)
+
+static void	recur(long int n, int *sum)
 {
 	char	c;
 
@@ -10,8 +23,8 @@ static void	Recur(long int n, int *sum)
 	}
 	else
 	{
-		Recur(n / 10, sum);
-		Recur(n % 10, sum);
+		recur(n / 10, sum);
+		recur(n % 10, sum);
 	}
 }
 
@@ -33,5 +46,5 @@ void	ft_putnbr_fd(int n, int *sum)
 	}
 	new_n = n;
 	new_n *= flag;
-	Recur(new_n, sum);
+	recur(new_n, sum);
 }

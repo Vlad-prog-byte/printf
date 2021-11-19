@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put_unsigned_int.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cayesha <cayesha@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/19 14:53:32 by cayesha           #+#    #+#             */
+/*   Updated: 2021/11/19 14:54:22 by cayesha          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../includes/ft_printf.h"
-static void	Recur(unsigned long int n, int *sum)
+
+static void	recur(unsigned long int n, int *sum)
 {
 	char	c;
 
@@ -10,8 +23,8 @@ static void	Recur(unsigned long int n, int *sum)
 	}
 	else
 	{
-		Recur(n / 10, sum);
-		Recur(n % 10, sum);
+		recur(n / 10, sum);
+		recur(n % 10, sum);
 	}
 }
 
@@ -25,5 +38,5 @@ void	ft_put_unsigned_int(unsigned int n, int *sum)
 		return ;
 	}
 	new_n = n;
-	Recur(new_n, sum);
+	recur(new_n, sum);
 }
